@@ -30,8 +30,7 @@ public class City {
 
     @Override
     public boolean equals(Object o) {
-        if (!(o instanceof City)) return false;
-        City city = (City) o;
+        if (!(o instanceof City city)) return false;
         return Objects.equals(getId(), city.getId()) && Objects.equals(getName(), city.getName()) && Objects.equals(getDistrict(), city.getDistrict()) && Objects.equals(getPopulation(), city.getPopulation());
     }
 

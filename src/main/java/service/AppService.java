@@ -109,12 +109,12 @@ public class AppService {
 
     public void getMysqlData(List<Integer> ids) {
         try (Session session = sessionFactory.getCurrentSession()) {
-            session.beginTransaction();
+            Transaction transaction = session.beginTransaction();
             for (Integer id : ids) {
                 City city = cityDAO.getById(id);
                 Set<CountryLanguage> languages = city.getCountry().getLanguages();
             }
-            session.getTransaction().commit();
+            transaction.commit();
         }
     }
 

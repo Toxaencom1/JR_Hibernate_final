@@ -69,8 +69,7 @@ public class Country {
 
     @Override
     public boolean equals(Object o) {
-        if (!(o instanceof Country)) return false;
-        Country country = (Country) o;
+        if (!(o instanceof Country country)) return false;
         return Objects.equals(getId(), country.getId()) && Objects.equals(getCode(), country.getCode()) && Objects.equals(getCode2(), country.getCode2()) && Objects.equals(getName(), country.getName()) && getContinent() == country.getContinent() && Objects.equals(getRegion(), country.getRegion()) && Objects.equals(getSurfaceArea(), country.getSurfaceArea()) && Objects.equals(getIndependenceYear(), country.getIndependenceYear()) && Objects.equals(getPopulation(), country.getPopulation()) && Objects.equals(getLifeExpectancy(), country.getLifeExpectancy()) && Objects.equals(getGnp(), country.getGnp()) && Objects.equals(getGnpoId(), country.getGnpoId()) && Objects.equals(getLocalName(), country.getLocalName()) && Objects.equals(getGovernmentForm(), country.getGovernmentForm()) && Objects.equals(getHeadOfState(), country.getHeadOfState());
     }
 
