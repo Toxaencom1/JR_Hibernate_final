@@ -20,8 +20,8 @@ public class City {
 
     private String name;
 
-    @ToString.Exclude
-    @ManyToOne
+//    @ToString.Exclude
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "country_id")
     private Country country;
 

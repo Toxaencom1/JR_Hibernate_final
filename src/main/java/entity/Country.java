@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
+import org.hibernate.annotations.BatchSize;
 
 import java.math.BigDecimal;
 import java.util.Objects;
@@ -57,11 +59,12 @@ public class Country {
     @Column(name = "head_of_state")
     private String headOfState;
 
-    @OneToOne
+    @ToString.Exclude
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "capital")
     private City capital;
 
-    @OneToMany(fetch = FetchType.EAGER)
+    @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "country_id")
     private Set<CountryLanguage> languages;
 
