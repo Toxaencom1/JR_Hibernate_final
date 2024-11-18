@@ -3,9 +3,7 @@ package dao;
 import entity.Country;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import java.util.List;
@@ -15,9 +13,9 @@ import java.util.List;
 public class CountryDAO {
     private final SessionFactory sessionFactory;
 
-    public List<Country> getAllCountries(){
-            Query<Country> countryQuery = sessionFactory.getCurrentSession().createQuery("from Country c left join fetch c.languages", Country.class);
-            List<Country> countryList = countryQuery.list();
-            return countryList;
+    public List<Country> getAllCountries() {
+        Query<Country> countryQuery = sessionFactory.getCurrentSession().createQuery("from Country c left join fetch c.languages", Country.class);
+        List<Country> countryList = countryQuery.list();
+        return countryList;
     }
 }

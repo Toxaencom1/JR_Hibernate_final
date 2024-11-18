@@ -1,6 +1,5 @@
 package dao;
 
-import entity.Country;
 import entity.CountryLanguage;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;

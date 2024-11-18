@@ -3,12 +3,9 @@ package dao;
 import entity.City;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -17,11 +14,11 @@ public class CityDAO {
 
     private final SessionFactory sessionFactory;
 
-    public List<City> getCitiesByRange(int offset, int limit){
-            Query<City> cityQuery = sessionFactory.getCurrentSession().createQuery("from City", City.class);
-            cityQuery.setFirstResult(offset);
-            cityQuery.setMaxResults(limit);
-            return cityQuery.list();
+    public List<City> getCitiesByRange(int offset, int limit) {
+        Query<City> cityQuery = sessionFactory.getCurrentSession().createQuery("from City", City.class);
+        cityQuery.setFirstResult(offset);
+        cityQuery.setMaxResults(limit);
+        return cityQuery.list();
     }
 
     public int getTotalCount() {
